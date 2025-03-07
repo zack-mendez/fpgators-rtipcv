@@ -5,7 +5,7 @@ This project, developed by FPGAtors at the University of Florida, focuses on rea
 
 ## Objectives
 - Interface the OV7670 camera module with the Basys3 FPGA board.
-- Implement real-time image processing algorithms using Verilog.
+- Implement real-time image processing algorithms using VHDL.
 - Display processed images on a VGA monitor.
 - Gain hands-on experience in digital image processing and hardware acceleration.
 
