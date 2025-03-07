@@ -15,4 +15,5 @@ This folder contains useful references and external resources related to FPGA-ba
 - [Link 6 - Interfacing OV7670 with FPGA](https://www.fpga4student.com/2018/08/basys-3-fpga-ov7670-camera.html)
 
 ## Video Graphic Interface
-- [Link 7 - Ben Eater VGA ](https://www.youtube.com/watch?v=l7rce6IQDWs&t=278s)
+- [Link 7 - Dr. Stitt VGA Slides](http://www.gstitt.ece.ufl.edu/courses/spring22/eel4712/lectures/VGAimplementation.pdf)
+- [Link 8 - Ben Eater VGA ](https://www.youtube.com/watch?v=l7rce6IQDWs&t=278s)
