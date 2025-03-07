@@ -1,7 +1,7 @@
 # Real-Time Image Processing on FPGA
 
 ## Overview
-This project, developed by FPGAtors at the University of Florida, focuses on real-time image processing using an FPGA-based system. We utilize the Basys3 board interfaced with an OV7670 camera to capture and process images using various 3x3 convolution filters, including gradient, Sobel, and Laplacian. The processed images are then output to a VGA display.
+This project, developed by FPGAtors at the University of Florida, focuses on real-time image processing using an FPGA-based system. We utilize the Basys3 board interfaced with an OV7670 camera to capture and process images using various 3x3 convolution filters, including Sobel and Laplacian. The processed images are then output to a VGA display.
 
 ## Objectives
 - Interface the OV7670 camera module with the Basys3 FPGA board.
@@ -13,7 +13,7 @@ This project, developed by FPGAtors at the University of Florida, focuses on rea
 The system consists of the following components:
 1. **Camera Interface Module**: Captures images from the OV7670 camera and converts them to a format suitable for FPGA processing.
 2. **Image Processing Module**: Applies 3x3 convolution filters in real-time, such as:
-   - **Gradient Filter**: Detects changes in intensity.
+   - **Mean Filter**: Blurs image.
    - **Sobel Filter**: Enhances edges in an image.
    - **Laplacian Filter**: Highlights regions of rapid intensity change.
 3. **VGA Controller**: Outputs the processed frames to a VGA display.
