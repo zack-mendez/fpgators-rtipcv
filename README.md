@@ -65,7 +65,7 @@ We are using the following sources for reference:
 ### Steps to Run the Project
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo/fpga-image-processing.git
+   git clone https://github.com/imuncool/fpgators-rtipcv.git
    ```
 2. Open Vivado and create a new project.
 3. Add the provided VHDL files and constraints.
