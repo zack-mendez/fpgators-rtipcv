@@ -2,10 +2,10 @@
 
 This folder contains useful references and external resources related to FPGA-based image processing and computer vision. Below are links to articles, tutorials, and documentation that can help deepen your understanding.
 
-## Verilog and VHDL Tutorials
+## VHDL Tutorials
 - [Link 1 - Dr. Stitt VHDL Tutorial](https://github.com/ARC-Lab-UF/vhdl-tutorial)
 
-## Basys3
+## Basys 3
 - [Link 2 - Basys 3](https://digilent.com/shop/basys-3-artix-7-fpga-trainer-board-recommended-for-introductory-users/?utm_source=google&utm_medium=cpc&utm_campaign=&utm_agid=157039393653&utm_term=basys3&device=c&gad_source=1&gclid=Cj0KCQiAz6q-BhCfARIsAOezPxmjL1-jy9L61I4v85mWErra40C5ZSVQ-GVgAPV9RaguqDl4eZz3KD0aApNxEALw_wcB)
 - [Link 3 - Basys 3 Manual](https://digilent.com/reference/programmable-logic/basys-3/reference-manual)
 - [Link 4 - Basys 3 Schematic](https://reference.digilentinc.com/_media/reference/programmable-logic/basys-3/basys-3-sch-public-rev-d.pdf?_gl=1*1e9vgp4*_gcl_aw*R0NMLjE3NDEzODU5NDIuQ2owS0NRaUF6NnEtQmhDZkFSSXNBT2V6UHhtakwxLWp5OUw2MUk0djg1bVdFcnJhNDBDNVpTVlEtR1ZnQVBWOVJhZ3VxRGw0ZVp6M0tEMGFBcE54RUFMd193Y0I.*_gcl_au*MTQ3ODQ1MjgxOS4xNzQxMDM0Mjk5*_ga*NjU0OTA5NDQxLjE3NDEwMzQzMDA.*_ga_JSPEFFCPBT*MTc0MTM2NjA4Ny4zLjEuMTc0MTM4NjA0Ny42MC4wLjA.)
@@ -17,3 +17,7 @@ This folder contains useful references and external resources related to FPGA-ba
 ## Video Graphic Interface
 - [Link 7 - Dr. Stitt VGA Slides](http://www.gstitt.ece.ufl.edu/courses/spring22/eel4712/lectures/VGAimplementation.pdf)
 - [Link 8 - Ben Eater VGA ](https://www.youtube.com/watch?v=l7rce6IQDWs&t=278s)
+
+## Reference Repositories
+- [Link 9 - FPGA_OV7670_Camera_Interface (Verilog)](https://github.com/AngeloJacobo/FPGA_OV7670_Camera_Interface)
+- [Link 10 - OV7670 Camera Controller for Xilinx FPGA (VHDL)](https://github.com/vogma/OV7670_ArtyA7)
