@@ -12,12 +12,14 @@ This folder contains useful references and external resources related to FPGA-ba
 
 ## OV7670 Camera
 - [Link 5 - OV7670 Amazon Link](https://www.amazon.com/OV7670-Aideepen-640x480-Compatible-Arduin0/dp/B0CF9QJFQ9/ref=sr_1_2?crid=C7BPCYM5B0RD&dib=eyJ2IjoiMSJ9.AEQ3eaA8uwclVn4xDiVovkB8DiLBeL4-3e9zWuyWz7Wo6UJ-z4rBMkYIhwJTxel6mxUbeI0YRPZKHsSQpWVo6rL50QvfVnZP2KJgjiGVSWQ8Hdshej4WQATL3d1iRH2UKUE_jCUll0b6eKOofqLomQilgrje5mDeVhEpAyD_AtRDPRtzZWnysrzDyb_ECv60xv_UfAOAHmpVcH-JSG4u9Ix9AEsD2ipUdoYZEkpXqPg.I0abULf8raab2RY8burKHMziah7-sPRB3Kdlw4_5l00&dib_tag=se&keywords=ov7670&qid=1741385491&sprefix=ov767%2Caps%2C188&sr=8-2)
-- [Link 6 - Interfacing OV7670 with FPGA](https://www.fpga4student.com/2018/08/basys-3-fpga-ov7670-camera.html)
+- [Link 6 - Interfacing OV7670 with Basys 3](https://www.fpga4student.com/2018/08/basys-3-fpga-ov7670-camera.html)
+- [Link 7 - FPGA Camera System](https://www.hackster.io/dhq/fpga-camera-system-14d6ea#toc-camera-1)
+- [Link 8 - REALLY Nice Camera/FPGA Guide](https://www.dejazzer.com/eigenpi/digital_camera/digital_camera.html)
 
 ## Video Graphic Interface
-- [Link 7 - Dr. Stitt VGA Slides](http://www.gstitt.ece.ufl.edu/courses/spring22/eel4712/lectures/VGAimplementation.pdf)
-- [Link 8 - Ben Eater VGA ](https://www.youtube.com/watch?v=l7rce6IQDWs&t=278s)
+- [Link 9 - Dr. Stitt VGA Slides](http://www.gstitt.ece.ufl.edu/courses/spring22/eel4712/lectures/VGAimplementation.pdf)
+- [Link 10 - Ben Eater VGA ](https://www.youtube.com/watch?v=l7rce6IQDWs&t=278s)
 
 ## Reference Repositories
-- [Link 9 - FPGA_OV7670_Camera_Interface (Verilog)](https://github.com/AngeloJacobo/FPGA_OV7670_Camera_Interface)
-- [Link 10 - OV7670 Camera Controller for Xilinx FPGA (VHDL)](https://github.com/vogma/OV7670_ArtyA7)
+- [Link 11 - FPGA_OV7670_Camera_Interface (Verilog)](https://github.com/AngeloJacobo/FPGA_OV7670_Camera_Interface)
+- [Link 12 - OV7670 Camera Controller for Xilinx FPGA (VHDL)](https://github.com/vogma/OV7670_ArtyA7)
