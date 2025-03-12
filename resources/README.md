@@ -17,6 +17,7 @@ This folder contains useful references and external resources related to FPGA-ba
 - [Link 7 - FPGA Camera System](https://www.hackster.io/dhq/fpga-camera-system-14d6ea#toc-camera-1)
 - [Link 8 - REALLY Nice Camera/FPGA Guide](https://www.dejazzer.com/eigenpi/digital_camera/digital_camera.html)
 - [Link 9 - OV7670 Arduino Camera Sensor Module Framecapture Tutorial](https://www.instructables.com/OV7670-Arduino-Camera-Sensor-Module-Framecapture-T/)
+- [Link 10 - CMOS OV7670 Camera Module (Pinout & uP Interfacing)](https://components101.com/modules/cmos-ov7670-camera-module-pinout-features-datasheet)
 
 ## Video Graphic Interface
 - [Link 10 - Dr. Stitt VGA Slides](http://www.gstitt.ece.ufl.edu/courses/spring22/eel4712/lectures/VGAimplementation.pdf)
