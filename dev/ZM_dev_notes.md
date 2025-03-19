@@ -91,17 +91,16 @@ Since the **first image processing filter I want to implement is a Laplacian or 
 
 #### Memory Calculation:  
 Previously, I was using **qVGA (320×240) with 12-bit color**:  
-\[
-320 \times 240 \times 12 = 921,600 \text{ bits} = 0.92 \text{ Mb}
-\]
-Since **full VGA (640×480) at 12-bit color** exceeds the BRAM limit:  
-\[
-640 \times 480 \times 12 = 3,686,400 \text{ bits} = 3.6 \text{ Mb} \quad (\text{which is too large for Basys 3's 1.8 Mb BRAM})
-\]
-By switching to **grayscale at 4 bits per pixel**:  
-\[
-640 \times 480 \times 4 = 1,228,800 \text{ bits} = 1.23 \text{ Mb}
-\]
+`320 × 240 × 12 = 921,600 bits = 0.92 Mb`  
+
+Since full VGA (640×480) at 12-bit color exceeds the BRAM limit:  
+`640 × 480 × 12 = 3,686,400 bits = 3.6 Mb` (which is **too large** for Basys 3’s 1.8 Mb BRAM).  
+
+By switching to grayscale at 4 bits per pixel:  
+`640 × 480 × 4 = 1,228,800 bits = 1.23 Mb`  
+
+This fits **within the Basys 3’s BRAM**, allowing me to process **higher-resolution images!**
+
 This **fits within the Basys 3's BRAM** while allowing me to process higher-resolution images!  
 
 Additionally, this means that if I migrate to the **Nexys A7 (4.86 Mb BRAM)**, I will be able to store **two full VGA grayscale frame buffers**, enabling **real-time processing with dual buffering**.   
