@@ -1,4 +1,4 @@
-# FPGA Real-Time Image Processing & Computer Vision - Development Log (2024)
+# Real-Time Image Processing & Computer Vision - ZM Development Log
 
 ## Overview
 This is my personal development log for an FPGA-based **real-time image processing system** using the **Basys 3** board and the **OV7670** camera. My goal is to **interface the camera, process images, and output them to a VGA display**, while overcoming hardware limitations. The original project plan focused on implementing **convolution filters like Sobel and Laplacian**, and I want to compare my work to those initial goals.
@@ -26,12 +26,12 @@ Now that the physical connections are in place, I’m starting to work on the **
 
 <img src="images/camera_setup.jpg" alt="Camera Setup" style="width:25%;">
 
-Since the **Basys 3** doesn’t have a dedicated camera interface, I have to **manually assign the SCCB, PCLK, VSYNC, HREF, and data lines** to the correct FPGA pins.  
+Since the **Basys 3** doesn’t have a dedicated camera interface, I have to **manually assign the XCLK, PCLK, VSYNC, HREF, and data lines** to the correct FPGA pins.  
 
 ### Key Considerations:  
-- **PMOD Pin Limitations**: The camera outputs an **8-bit data bus**, but each PMOD connector only has **8 total pins** for communication. I need to split the connections across multiple PMODs, I will elect to chose PMOD JB and JC.  
+- **PMOD Pin Limitations**: The camera outputs an **8-bit data bus**, but each PMOD connector only has **8 total pins** for communication. I need to split the connections across multiple PMODs. I will elect to chose PMOD JB and JC.  
 - **Clock Signals**: The **PCLK (Pixel Clock)** needs to be mapped correctly for accurate data capture as it is an **external** clock.  
-- **SCCB Communication**: The **SDA (data) and SCL (clock) lines** for SCCB (I2C) must be pulled up properly to function correctly.  
+- **SCCB Communication**: The **sio_d (data) and sio_c (clock) lines** for SCCB must be pulled up properly to function correctly.  
 
 This part is **critical**, because if the constraints file is wrong, the FPGA **won’t correctly receive data from the camera**, and nothing else will work.  
 
@@ -58,7 +58,7 @@ I suspect the issue is with the **SCCB interface** not writing to the camera reg
 ## March 17  
 Made **a ton of progress today** refining and optimizing everything.  
 
-After a lot of trial and error, I **finally got the colors working correctly!** Turns out the issue was **how I was writing to the SCCB registers**—I wasn’t configuring the camera properly. My first attempt at an SCCB interface was really bad, but now it is taking shape! 
+After a lot of trial and error, I **finally got the colors working correctly.** Turns out the issue was **how I was writing to the SCCB registers**—I wasn’t configuring the camera properly. My first attempt at an SCCB interface was really bad, but now it is taking shape.
 
 I have **extensively studied the SCCB interface documentation** and now have a **deep understanding of the 3-phase write transmission process**. I also fully grasp how **SCCB packets are structured** and the exact steps needed to establish **proper communication with the camera**.  
 
@@ -68,14 +68,14 @@ I decided to switch from **RGB565 to RGB444** because of **ugly green artifacts*
 
 ### Memory Limitations  
 One of the biggest problems with this project is **BRAM (Block RAM) limitations** on the Basys 3.  
-- Full **VGA (640x480) at 12-bit color** needs **3.6 Mb**, but the Basys 3 only has **1.8 Mb**—not enough!  
-- To work around this, I am using **qVGA (320x240) at 12-bit color**, which only requires **0.92 Mb**.  
+- Full **VGA (640x480) at 12-bit color** needs **3.6 Mb** to buffer one frame, but the Basys 3 only has **1.8 Mb**—not enough.
+- To work around this, I am using **qVGA (320x240) at 12-bit color**, which only requires **0.92 Mb** per frame.  
 - This is **more than 50% of my available BRAM**, so adding more image buffers for processing isn’t possible… yet.  
 
 ---
 
 ## March 18  
-Had a **breakthrough idea** today: **use the Basys 3’s 16 switches to configure the camera in real-time!**  
+Had a **breakthrough idea** today: **use the Basys 3’s 16 switches to configure the camera in real-time.**  
 
 Instead of recompiling the entire design just to change a register, I now use:  
 - **Top 8 switches**: Set the **sub-address**.  
@@ -99,11 +99,24 @@ Since full VGA (640×480) at 12-bit color exceeds the BRAM limit:
 By switching to grayscale at 4 bits per pixel:  
 `640 × 480 × 4 = 1,228,800 bits = 1.23 Mb`  
 
-This fits **within the Basys 3’s BRAM**, allowing me to process **higher-resolution images!**
+This fits **within the Basys 3’s BRAM**, allowing me to process **higher-resolution images.**
+
+So, how do we convert from 12-bit RGB to 4-bit grayscale?
+
+## Grayscale Conversion Formula  
+A grayscale image represents **luminance**, which is how bright each pixel appears to the human eye. Since the human eye is **more sensitive to green**, the most commonly used grayscale conversion formula is:  
+`Gray = 0.299R + 0.587G + 0.114B`
+
+In software, this task would be simple. But, in hardware, it would be better to optimize this calculation in order to decrease the length of the **critical path**. This is a point where data can go through a lot of logic gates before being latched in a register again, so this is an important consideration.
+
+Thus, the way the system calculates the grayscale values uses the following equation:
+`Gray = (77R + 150G + 29B) >> 8`
+
+Instead of right shifting by 8, I can simply slice into the top 4 bits of the result of the multiply and add operation-which is equivalent to right shifting by 8. These optimizations approximates the original equation pretty well while also decreasing the hardware complexity considerably.
 
 Additionally, this means that if I migrate to the **Nexys A7 (4.86 Mb BRAM)**, I will be able to store **two full VGA grayscale frame buffers**, enabling **real-time processing with dual buffering**.   
 
-It took **multiple hours of debugging** (thanks to Vivado being difficult), but I finally got **grayscale VGA working!** Ironically, it worked **on the very first bitstream build** after I solved all the compilation issues.  
+It took **multiple hours of debugging** (thanks to Vivado being difficult), but I finally got **grayscale VGA working.** Ironically, it worked **on the very first bitstream build** after I solved all the compilation issues.  
 
 ### Future Expansion - Nexys A7  
 Now that I have a system that **captures, processes, and outputs video**, I’m thinking about the **next step**:  
@@ -118,14 +131,14 @@ Right now, I’m considering **using my student discount to get the Nexys A7** a
 ## Next Steps  
 - **Fix SCCB Transmitter**: The current implementation's base configuration is still glitchy. I need to clean up the logic and make it more stable.  
 - **Implement Edge Detection**: Now that grayscale VGA is working, I can start working on **Sobel and Laplacian filters**.  
-- **Migrate to Nexys A7**: More BRAM = dual frame buffers = real-time image processing!  
+- **Migrate to Nexys A7**: More BRAM = dual frame buffers = real-time image processing.  
 
 ---
 
 ## Final Thoughts  
 This has been a **challenging but exciting** project. I’ve had to **work around hardware limitations**, **debug low-level SCCB communication**, and **optimize memory usage** to make this work. Compared to the original project scope, I have successfully implemented **camera interfacing, VGA output, and memory management**, but **image processing filters are the next big challenge.**  
 
-There’s still a lot to do, but I’m **really excited** about where this is going!  
+There’s still a lot to do, but I’m **really excited** about where this is going.
 
 ---
 **Author:** Zachary Mendez  
