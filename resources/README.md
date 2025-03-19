@@ -25,3 +25,6 @@ This folder contains useful references and external resources related to FPGA-ba
 
 ## SCCB Interface
 - [Link 13 - SCCB Protocol Specification](https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2021/jfw225_aei23_dsb298/jfw225_aei23_dsb298/SCCBSpec_AN.pdf)
+
+## General
+- [Link 14 - Building a video controller](https://zipcpu.com/blog/2018/11/29/llvga.html)
