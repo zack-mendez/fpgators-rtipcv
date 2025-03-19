@@ -14,7 +14,7 @@ I also got some essential **wires** from **Eric Liebner**, which I’ll need to 
 
 ## March 13  
 
-![Cable](images/pmod_setup.jpg)
+<img src="images/cable.jpg" alt="Cable" style="width:25%;">
 
 Today, I **built a cable** to seamlessly interface the **OV7670 camera** with the **Basys 3**. This should make it easier to work with, instead of using messy jumpers.  
 
@@ -24,7 +24,7 @@ I need to make sure the camera is wired correctly to the FPGA’s **GPIO pins**,
 
 Now that the physical connections are in place, I’m starting to work on the **XDC constraints file** to correctly map the **OV7670 camera signals** to the **Basys 3 PMOD ports**.  
 
-![Camera Connection](images/camera_setup.jpg)
+<img src="images/camera_setup.jpg" alt="Camera Setup" style="width:25%;">
 
 Since the **Basys 3** doesn’t have a dedicated camera interface, I have to **manually assign the SCCB, PCLK, VSYNC, HREF, and data lines** to the correct FPGA pins.  
 
@@ -35,7 +35,7 @@ Since the **Basys 3** doesn’t have a dedicated camera interface, I have to **m
 
 This part is **critical**, because if the constraints file is wrong, the FPGA **won’t correctly receive data from the camera**, and nothing else will work.  
 
-![PMOD Connection](images/pmod_setup.jpg)
+<img src="images/pmod_setup.jpg" alt="PMOD Setup" style="width:25%;">
 
 Once I finish defining all the mappings, I’ll start testing **basic communication** with the camera to make sure the signals are coming through properly.  
 
