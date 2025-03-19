@@ -20,9 +20,8 @@ This folder contains useful references and external resources related to FPGA-ba
 - [Link 10 - CMOS OV7670 Camera Module (Pinout & uP Interfacing)](https://components101.com/modules/cmos-ov7670-camera-module-pinout-features-datasheet)
 
 ## Video Graphic Interface
-- [Link 10 - Dr. Stitt VGA Slides](http://www.gstitt.ece.ufl.edu/courses/spring22/eel4712/lectures/VGAimplementation.pdf)
-- [Link 11 - Ben Eater VGA ](https://www.youtube.com/watch?v=l7rce6IQDWs&t=278s)
+- [Link 11 - Dr. Stitt VGA Slides](http://www.gstitt.ece.ufl.edu/courses/spring22/eel4712/lectures/VGAimplementation.pdf)
+- [Link 12 - Ben Eater VGA ](https://www.youtube.com/watch?v=l7rce6IQDWs&t=278s)
 
-## Reference Repositories
-- [Link 12 - FPGA_OV7670_Camera_Interface (Verilog)](https://github.com/AngeloJacobo/FPGA_OV7670_Camera_Interface)
-- [Link 13 - OV7670 Camera Controller for Xilinx FPGA (VHDL)](https://github.com/vogma/OV7670_ArtyA7)
+## SCCB Interface
+- [Link 13 - SCCB Protocol Specification](https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2021/jfw225_aei23_dsb298/jfw225_aei23_dsb298/SCCBSpec_AN.pdf)
