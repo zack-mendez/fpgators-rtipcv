@@ -103,18 +103,17 @@ This fits **within the Basys 3’s BRAM**, allowing me to process **higher-resol
 
 So, how do we convert from 12-bit RGB to 4-bit grayscale?
 
-## Grayscale Conversion Formula  
-A grayscale image represents **luminance**, which is how bright each pixel appears to the human eye. Since the human eye is **more sensitive to green**, the most commonly used grayscale conversion formula is:  
-`Gray = 0.299R + 0.587G + 0.114B`
+### Grayscale Conversion Formula  
+A grayscale image represents **luminance**, which is how bright each pixel appears to the human eye. Since the human eye is **more sensitive to green**, the most commonly used grayscale conversion formula is: `Gray = 0.299R + 0.587G + 0.114B`
 
-In software, this task would be simple. But, in hardware, it would be better to optimize this calculation in order to decrease the length of the **critical path**. This is a point where data can go through a lot of logic gates before being latched in a register again, so this is an important consideration.
+In software, this task would be simple. But, in hardware, it would be better to optimize this calculation in order to decrease the length of the **critical path**. This calculation could be a point where data can go through a lot of logic gates before being latched by a register, so this is an important consideration.
 
 Thus, the way the system calculates the grayscale values uses the following equation:
 `Gray = (77R + 150G + 29B) >> 8`
 
 Instead of right shifting by 8, I can simply slice into the top 4 bits of the result of the multiply and add operation-which is equivalent to right shifting by 8. These optimizations approximates the original equation pretty well while also decreasing the hardware complexity considerably.
 
-Additionally, this means that if I migrate to the **Nexys A7 (4.86 Mb BRAM)**, I will be able to store **two full VGA grayscale frame buffers**, enabling **real-time processing with dual buffering**.   
+These optimizations mean that that if I migrate to the **Nexys A7 (4.86 Mb BRAM)**, I will be able to store **two full VGA grayscale frame buffers**, enabling **real-time processing with dual buffering**.   
 
 It took **multiple hours of debugging** (thanks to Vivado being difficult), but I finally got **grayscale VGA working.** Ironically, it worked **on the very first bitstream build** after I solved all the compilation issues.  
 
