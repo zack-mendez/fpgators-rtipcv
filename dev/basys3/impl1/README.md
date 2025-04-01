@@ -95,7 +95,7 @@ impl1/  ├── constraints/                                        # XDC cons
 
 **Fun Switch Configuration:**
 > Set `SW = 0011101000100000` (Hex: `0x3A20`) and press `btnL`  
-> This writes `0x20` to the **TSLB** register, enabling **negative image mode** —  
+> This writes `0x20` to the **TSLB** register, enabling **negative image mode**  
 
 ---
 
@@ -103,7 +103,7 @@ impl1/  ├── constraints/                                        # XDC cons
 
 The next implementation will support:
 
-> **⚡ Real-Time Thresholding for Pseudocolor Imaging**
+> ** Real-Time Thresholding for Pseudocolor Imaging**
 
 This will apply dynamic pixel thresholding to the grayscale feed, mapping values to colors for segmenting intensity levels — useful for things like motion detection, thermal visualization, or basic object highlighting.
 
