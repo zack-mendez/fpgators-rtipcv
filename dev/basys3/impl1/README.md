@@ -20,22 +20,22 @@ This implementation serves as the foundation for future real-time video processi
 
 ## What This Implementation Achieves
 
-- ✅ OV7670 camera initialization over SCCB (I2C)
-- ✅ Real-time video capture and frame buffering
-- ✅ RGB444 to grayscale conversion
-- ✅ VGA output with sync timing generation (640x480 @ 60Hz)
-- ✅ Grayscale image display using a dual-port framebuffer
-- ✅ Button-controlled configuration and manual override via switches
+- OV7670 camera initialization over SCCB (I2C)
+- Real-time video capture and frame buffering
+- RGB444 to grayscale conversion
+- VGA output with sync timing generation (640x480 @ 60Hz)
+- Grayscale image display using a dual-port framebuffer
+- Button-controlled configuration and manual override via switches
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 impl1/  ├── constraints/                                        # XDC constraints file for Basys 3 pin mapping 
         ├── ip/                                                 # IP cores (PLL for clock generation, etc.) 
         ├── vhdl/                                               # All VHDL source files 
         │ └── top_level.vhd
-        ├── README.md                                           # You are here!
+        ├── README.md
 
 ---
 
