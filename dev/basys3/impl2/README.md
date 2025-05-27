@@ -17,21 +17,21 @@ New features include convolution-based filters, dynamic threshold control using 
 
 ## What This Implementation Adds
 
-- ✅ 3×3 convolution filters: **Sobel X, Sobel Y, Emboss, Debug**
-- ✅ Combined Sobel X/Y for stronger edge extraction
-- ✅ Binary thresholding on edge results (`0x0` or `0xF`)
-- ✅ **Rotary encoder** for:
+- 3×3 convolution filters: **Sobel X, Sobel Y, Emboss, Debug**
+- Combined Sobel X/Y for stronger edge extraction
+- Binary thresholding on edge results (`0x0` or `0xF`)
+- **Rotary encoder** for:
   - Turning right: increase threshold
   - Turning left: decrease threshold
   - Pressing down: reset threshold to 0
-- ✅ **Mode switch**: toggle edge detection mode (with threshold) or passthrough
-- ✅ **Pseudocolor mapping** via switches:
+- **Mode switch**: toggle edge detection mode (with threshold) or passthrough
+- **Pseudocolor mapping** via switches:
   - `00`: Grayscale
   - `01`: Rainbow
   - `10`: Heatmap
   - `11`: Retro
-- ✅ Modular and extensible design with streamlined kernel and color selection
-- ✅ Debug-friendly identity kernel mode for passthrough verification
+- Modular and extensible design with streamlined kernel and color selection
+- Debug-friendly identity kernel mode for passthrough verification
 
 ---
 
