@@ -109,18 +109,16 @@ Update the `.xdc` constraints file to match these assignments.
 
 ## Controls
 
-- `btnC` — Trigger default OV7670 configuration
-- `btnL` — Write manual SCCB register value from `SW[15:0]`
 - `btnR` — Global reset
-- `SW[15:0]` — 8-bit subaddress + 8-bit value for manual SCCB writes
+- `btnC` — Trigger default OV7670 configuration
 - **Rotary Encoder:**
   - **Turn Right**: Increase threshold (max = 15)
   - **Turn Left**: Decrease threshold (min = 0)
   - **Press Button**: Reset threshold to 0
 - **Mode Switch**: Selects between:
-  - **Edge detection mode** (Sobel X + Y + threshold)
+  - **Edge detection mode** (Sobel X + Y + thresholding)
   - **Passthrough mode** (no thresholding)
-- **SW[1:0]** — Pseudocolor scheme:
+- **Basys 3 SW[1:0]** — Pseudocolor scheme:
   - `00`: Grayscale
   - `01`: Rainbow
   - `10`: Heatmap
