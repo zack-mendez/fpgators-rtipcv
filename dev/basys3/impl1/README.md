@@ -102,7 +102,7 @@ impl1/  ├── constraints/  # XDC constraints file for Basys 3 pin mapping
 
 The next implementation will support:
 
-# ** Real-Time Thresholding for Pseudocolor Imaging**
+#### ** Real-Time Thresholding for Pseudocolor Imaging**
 
 This will apply dynamic pixel thresholding to the grayscale feed, mapping values to colors for segmenting intensity levels — useful for things like motion detection, thermal visualization, or basic object highlighting.
 
