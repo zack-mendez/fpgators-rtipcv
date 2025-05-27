@@ -2,7 +2,7 @@
 
 ### Author: Zack Mendez  
 ### Project: RTIPCV  
-### Platform: **Basys 3 FPGA** + OV7670 Camera  
+### Platform: **Basys 3 FPGA** + OV7670 Camera + Pmod ENC
 ### Toolchain: Vivado 2024.1  
 
 ---
@@ -20,11 +20,11 @@ New features include convolution-based filters, dynamic threshold control using 
 - 3×3 convolution filters: **Sobel X, Sobel Y, Emboss, Debug**
 - Combined Sobel X/Y for stronger edge extraction
 - Binary thresholding on edge results (`0x0` or `0xF`)
-- **Rotary encoder** for:
+- **PMOD Rotary encoder** for:
   - Turning right: increase threshold
   - Turning left: decrease threshold
   - Pressing down: reset threshold to 0
-- **Mode switch**: toggle edge detection mode (with threshold) or passthrough
+    - **Mode switch**: toggle switch between edge detection mode (with threshold) or passthrough
 - **Pseudocolor mapping** via switches:
   - `00`: Grayscale
   - `01`: Rainbow
@@ -59,7 +59,7 @@ impl2/
 - **FPGA Board:** Digilent **Basys 3** (`xc7a35tcpg236-1`)
 - **Camera:** OV7670 (without FIFO)
 - **Display:** VGA-compatible monitor
-- **Controls:** Rotary Encoder (with push), Pushbuttons, Switches
+- **Controls:** [Encoder](https://digilent.com/shop/pmod-enc-rotary-encoder/), Pushbuttons, Switches
 - **Power/Data:** MicroUSB + VGA cable
 
 ---
