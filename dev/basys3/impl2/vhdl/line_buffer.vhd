@@ -1,3 +1,22 @@
+------------------------------------------------------------------------
+-- Company       : FPGAtors
+-- Engineer      : Zack Mendez
+-- Create Date   : 5/26/2025
+-- Module Name   : line_buffer
+-- Project Name  : RTIPCV
+-- Target Device : Generic FPGA
+-- Tool Versions : Vivado 2024.1
+-- Description   : Triple-line buffering system for 3x3 window generation.
+--                 Stores pixel rows for use in convolution-based filtering.
+--                 Includes internal FSM for row cycling and flush handling.
+--
+-- Revision      : v1.0
+-- Revision Date : 5/26/2025
+-- Author        : Zack Mendez
+-- Comments      : Dynamically rotates active line buffers to feed 3x3
+--                 kernel inputs. Valid signal ensures output is stable.
+------------------------------------------------------------------------
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

@@ -1,4 +1,21 @@
--- think an II=1 breaks this implementation. whoops
+------------------------------------------------------------------------
+-- Company       : FPGAtors
+-- Engineer      : Zack Mendez
+-- Create Date   : 5/26/2025
+-- Module Name   : shift_register_3x3
+-- Project Name  : RTIPCV
+-- Target Device : Generic FPGA
+-- Tool Versions : Vivado 2024.1
+-- Description   : Sliding window generator for 3x3 convolution.
+--                 Shifts pixel columns from three buffered rows,
+--                 producing stable 3x3 pixel grids for filtering.
+--
+-- Revision      : v1.0
+-- Revision Date : 5/26/2025
+-- Author        : Zack Mendez
+-- Comments      : Includes flush/reset handling and a three-cycle delay
+--                 to validate output. Feeds convolution kernel inputs.
+------------------------------------------------------------------------
 
 library ieee;
 use ieee.std_logic_1164.all;

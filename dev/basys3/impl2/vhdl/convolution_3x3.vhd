@@ -1,3 +1,23 @@
+------------------------------------------------------------------------
+-- Company       : FPGAtors
+-- Engineer      : Zack Mendez
+-- Create Date   : 5/26/2025
+-- Module Name   : convolution_3x3
+-- Project Name  : RTIPCV
+-- Target Device : Generic FPGA
+-- Tool Versions : Vivado 2024.1
+-- Description   : Performs 3x3 convolution with support for multiple
+--                 kernel modes (DEBUG, SOBEL_X, SOBEL_Y). Computes
+--                 absolute sum of weighted window and clips result
+--                 to 4-bit grayscale output.
+--
+-- Revision      : v1.0
+-- Revision Date : 5/26/2025
+-- Author        : Zack Mendez
+-- Comments      : Output is OR'd combination of SOBEL_X and SOBEL_Y
+--                 when `kernel_sel` is high; otherwise uses DEBUG kernel.
+------------------------------------------------------------------------
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
